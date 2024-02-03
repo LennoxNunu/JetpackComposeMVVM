@@ -1,6 +1,7 @@
 package com.example.jetpackcomposemvvm
 
 import androidx.lifecycle.ViewModel
+import com.example.jetpackcomposemvvm.data.Conversion
 
 class ConverterViewModel: ViewModel() {
     fun getConversions() = listOf(
