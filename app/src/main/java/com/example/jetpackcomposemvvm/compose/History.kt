@@ -1,4 +1,4 @@
-package com.example.jetpackcomposemvvm
+package com.example.jetpackcomposemvvm.compose
 
 import androidx.compose.runtime.Composable
 

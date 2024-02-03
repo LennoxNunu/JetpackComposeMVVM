@@ -1,4 +1,4 @@
-package com.example.jetpackcomposemvvm
+package com.example.jetpackcomposemvvm.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
