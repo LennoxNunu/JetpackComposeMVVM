@@ -1,4 +1,4 @@
-package com.example.jetpackcomposemvvm.compose
+package com.example.jetpackcomposemvvm.compose.converter
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

@@ -1,4 +1,4 @@
-package com.example.jetpackcomposemvvm.compose
+package com.example.jetpackcomposemvvm.compose.converter
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
