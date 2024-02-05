@@ -1,5 +1,6 @@
 package com.example.jetpackcomposemvvm
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.jetpackcomposemvvm.data.Conversion
@@ -25,6 +26,20 @@ class ConverterViewModel(private val repository: ConverterRepository) : ViewMode
     fun addResult(message1 : String, message2 : String){
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertResult(ConversionResult(0,message1,message2))
+        }
+    }
+
+    fun removeResult(item : ConversionResult){
+        viewModelScope.launch(Dispatchers.IO) {
+            Log.i("Mytag","above view model")
+            repository.deleteResult(item)
+            Log.i("Mytag","Inside view model")
+        }
+    }
+
+    fun clearAll(){
+        viewModelScope.launch (Dispatchers.IO){
+            repository.deleteAllResults()
         }
     }
 
