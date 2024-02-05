@@ -48,8 +48,6 @@ fun HistoryItem(
             Icon(Icons.Filled.Close, contentDescription ="close" )
         }
 
-
-
     }
 
 }

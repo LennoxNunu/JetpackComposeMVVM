@@ -11,13 +11,16 @@ import com.example.jetpackcomposemvvm.compose.BaseScreen
 import com.example.jetpackcomposemvvm.data.ConverterDatabase
 import com.example.jetpackcomposemvvm.data.ConverterRepositoryImpl
 import com.example.jetpackcomposemvvm.ui.theme.JetpackComposeMVVMTheme
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @Inject
+    lateinit var factory : ConverterViewModelFactory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val dao = ConverterDatabase.getInstance(application).converterDAO
-        val repository = ConverterRepositoryImpl(dao)
-        val factory = ConverterViewModelFactory(repository)
 
         setContent {
             JetpackComposeMVVMTheme {
