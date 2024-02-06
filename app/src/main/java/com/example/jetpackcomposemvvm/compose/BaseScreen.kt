@@ -14,7 +14,6 @@ import com.example.jetpackcomposemvvm.ConverterViewModelFactory
 import com.example.jetpackcomposemvvm.compose.converter.TopScreen
 import com.example.jetpackcomposemvvm.compose.history.HistoryScreen
 
-
 @Composable
 fun BaseScreen(
     factory: ConverterViewModelFactory,
@@ -26,13 +25,17 @@ fun BaseScreen(
     val historyList = converterViewModel.resultList.collectAsState(initial = emptyList())
 
     Column(modifier = modifier.padding(30.dp)) {
-        TopScreen(list){ message1,message2 ->
+        TopScreen(list,
+            converterViewModel.selectedConversion,
+            converterViewModel.inputText,
+            converterViewModel.typedValue
+        ){ message1,message2 ->
             converterViewModel.addResult(message1,message2)
         }
         Spacer(modifier = modifier.height(20.dp))
         HistoryScreen(
-            historyList,{
-                converterViewModel.removeResult(it)
+            historyList,{item ->
+                converterViewModel.removeResult(item)
             },
             {
                 converterViewModel.clearAll()
